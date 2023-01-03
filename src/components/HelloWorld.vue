@@ -1,35 +1,3 @@
-<template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
-  </div>
-</template>
-
 <script>
 export default {
   name: 'HelloWorld',
@@ -39,20 +7,35 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
+<template>
+  <div class="hello">
+    <h1 class="title">{{ msg }}</h1>
+    <h2 class="subtitle">Please Select an Option</h2>
+    <div class="columns is-centered is-multiline mr-5 ml-5">
+      <div class="column block mt-5 is-one-quarter">
+          <img height="180" width="180" src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Premier_League_Logo.svg/1200px-Premier_League_Logo.svg.png" />
+      </div>
+      <div class="column block mt-6 is-one-quarter">
+          <img height="180" width="180" src="data:image/png;base64,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" />
+      </div>
+      <div class="column block is-one-quarter">
+          <img height="180" width="180" src="https://1000logos.net/wp-content/uploads/2021/10/Italian-Serie-A-logo.png"/>
+      </div>
+      <div class="column block is-one-quarter">
+          <img height="100" width="100" class="block" src="https://4.bp.blogspot.com/-4LwsXxqR5wY/Xu9eHQlhwuI/AAAAAAACdf8/6uIxrhfUHnYpXzfqMwwkq--mOq7WxlNgQCNcBGAsYHQ/s550/ligue-1-logo-%25284%2529.png" />
+      </div>
+      <div class="column is-one-quarter">
+        <button class="button is-primary">Premier League</button>
+      </div>
+      <div class="column is-one-quarter">
+        <button class="button is-primary">La Liga</button>
+      </div>
+      <div class="column is-one-quarter">
+        <button class="button is-primary">Serie A</button>
+      </div>
+      <div class="column is-one-quarter">
+        <button class="button is-primary">Ligue 1</button>
+      </div>
+    </div>
+  </div>
+</template>
