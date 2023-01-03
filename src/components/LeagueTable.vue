@@ -1,36 +1,44 @@
 <script>
 import Team from '@/JS/Team';
-// import LeagueTableTeam from './LeagueTableTeam.vue';
+import LeagueTableTeam from './LeagueTableTeam.vue';
 export default {
     name: "LeagueTable",
-    props: {
-        teams: Team.generateTeams
+    data() {
+        return {
+            teams: Team.generateTeams()
+        }
     },
-    // components: { LeagueTableTeam }
+
+    components: { LeagueTableTeam }
 }
 </script>
 
 <template>
   <div class="box">
     <div class="columns">
-        <div class="column is-one-fifths">
+        <div class="column is-one-seventh">
+            <h2 class="subtitle">Position</h2>
+        </div>
+        <div class="column is-one-seventh">
             <h2 class="subtitle">Team Name</h2>
         </div>
-        <div class="column is-one-fifths">
+        <div class="column is-one-seventh">
             <h2 class="subtitle">Games Played</h2>
         </div>
-        <div class="column is-one-fifth">
+        <div class="column is-one-seventh">
             <h2 class="subtitle">Wins</h2>
         </div>
-        <div class="column is-one-fifth">
+        <div class="column is-one-seventh">
             <h2 class="subtitle">Draws</h2>
         </div>
-        <div class="column is-one-fifth">
+        <div class="column is-one-seventh">
             <h2 class="subtitle">Losses</h2>
         </div>
+        <div class="column is-one-seventh">
+            <h2 class="subtitle">Points</h2>
+        </div>
     </div>
-    <h1 v-for="team in teams" :key="team">{{ team.name }}</h1>
-    <!-- <LeagueTableTeam  v-for="team in teams"  :key="team.name" /> -->
+    <LeagueTableTeam  v-for="(team, index) in teams"  :key="team.name" :position="index+=1" :name="team.name" :games_played="team.gamesPlayed" :wins="team.wins" :draws="team.draws" :losses="team.losses" :points="team.points"/>
     
   </div>
 </template>

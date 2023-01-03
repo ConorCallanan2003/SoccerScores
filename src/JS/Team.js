@@ -19,14 +19,14 @@ export default class Team {
     
     static generateTeams() {
         
-        const teams = ["Liverpool", "Manchester United", "Manchester City", "Everton", "Newcastle", "Aston Villa", "Southhampton", "Leicster", "Arsenal", "Tottenham Hotspurs", "Brighton", "Wolves", "Chelsea", "Brentford", "Fulham", "Leeds", "Crystal Palace", "Bournemouth", "West Ham", "Wolves", "Nottm Forrest"];
+        const teams = ["Liverpool", "Manchester United", "Manchester City", "Everton", "Newcastle", "Aston Villa", "Southhampton", "Leicester", "Arsenal", "Tottenham Hotspurs", "Brighton", "Chelsea", "Brentford", "Fulham", "Leeds", "Crystal Palace", "Bournemouth", "West Ham", "Wolves", "Nottm Forrest"];
         
         const teamList = [];
 
         teams.forEach(team => {
-            const numOfDraws = Math.random(5);
-            const numOfWins = Math.random(11);
-            const numOfLosses = 15 - numOfDraws - numOfLosses;
+            const numOfDraws = Math.floor(Math.random()*5);
+            const numOfWins = Math.floor(Math.random()*15);
+            const numOfLosses = 15 - numOfDraws - numOfWins;
             const points = numOfDraws + (numOfWins*3);
             const newTeam = new Team(team, 15, numOfDraws, numOfWins, numOfLosses, points)
             teamList.push(newTeam)
@@ -37,12 +37,13 @@ export default class Team {
                 const temp = teamList[index];
                 teamList[index] = teamList[index+1];
                 teamList[index+1] = temp;
-                index = 0;
+                index = -1;
             }
         }
 
-        return teamList;
-    }
+        const correctOrder = teamList.reverse();
 
+        return correctOrder;
+    }
     
 }

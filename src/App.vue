@@ -1,6 +1,8 @@
 <template>
   <!-- <HelloWorld msg="Welcome to My App"/> -->
-  <LeagueTable />
+  <div class="mh-5">
+    <LeagueTable />
+  </div>
 </template>
 
 <script>
