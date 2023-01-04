@@ -1,21 +1,23 @@
 <script>
-import Team from '@/JS/Team';
+// import Team from '@/JS/Team';
 import LeagueTableTeam from './LeagueTableTeam.vue';
 export default {
     name: "LeagueTable",
-    data() {
-        return {
-            teams: Team.generateTeams()
+    props: {
+        name: String,
+        teams: {
+            type: Array,
+            default: () => ([])
         }
     },
-
     components: { LeagueTableTeam }
 }
 </script>
 
 <template>
-  <div class="box">
-    <div class="columns">
+    <div class="title">Premier League</div>
+  <div class="mr-3 ml-3 box">
+    <div class="mr-2 ml-2 columns">
         <div class="column is-one-seventh">
             <h2 class="subtitle">Position</h2>
         </div>

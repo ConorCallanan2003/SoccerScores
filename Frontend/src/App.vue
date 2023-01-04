@@ -1,16 +1,21 @@
 <template>
-  <!-- <HelloWorld msg="Welcome to My App"/> -->
-  <div class="mh-5">
-    <LeagueTable />
+  <div>
+    <LeagueTable v-for="league in leagues" v-bind:key="league.name" :name="league.name" :teams="league.teams" />
   </div>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 import LeagueTable from './components/LeagueTable.vue';
+import League from './JS/League';
 
 export default {
   name: 'App',
+  data() {
+    return {
+      leagues: League.retrieveLeagues()
+    }
+  },
   components: {
     // HelloWorld,
     LeagueTable
