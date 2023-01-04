@@ -15,9 +15,9 @@ export default {
 </script>
 
 <template>
-    <div class="title">Premier League</div>
+    <div class="title">{{ name }}</div>
   <div class="mr-3 ml-3 box">
-    <div class="mr-2 ml-2 columns">
+    <div class="mr-2 ml-2 columns is-mobile">
         <div class="column is-one-seventh">
             <h2 class="subtitle">Position</h2>
         </div>

@@ -18,7 +18,7 @@ func getRoot(w http.ResponseWriter, r *http.Request) {
 func getLeagues(w http.ResponseWriter, r *http.Request) {
 	enableCors(&w)
 	fmt.Printf("got /leagues request\n")
-	io.WriteString(w, string(data))
+	io.WriteString(w, data)
 }
 
 var data string

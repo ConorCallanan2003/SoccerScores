@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-    <div class="columns box">
+    <div class="columns box is-mobile">
         <div class="column is-one-seventh">
             <h2 class="subtitle">{{ position }}</h2>
         </div>

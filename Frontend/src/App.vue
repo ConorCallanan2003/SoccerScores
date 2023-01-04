@@ -1,24 +1,19 @@
 <template>
-  <div>
-    <LeagueTable v-for="league in leagues" v-bind:key="league.name" :name="league.name" :teams="league.teams" />
-  </div>
+  <Home />
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-import LeagueTable from './components/LeagueTable.vue';
-import League from './JS/League';
+import Home from './views/Home.vue';
 
 export default {
   name: 'App',
-  data() {
-    return {
-      leagues: League.retrieveLeagues()
+  methods: {
+    handleNavigation() {
+
     }
   },
   components: {
-    // HelloWorld,
-    LeagueTable
+    Home
 }
 }
 </script>
