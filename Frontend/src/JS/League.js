@@ -14,7 +14,7 @@ export default class League {
         const leagues = [];
 
         var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open( "GET", "http://localhost:3333/leagues", false ); // false for synchronous request
+        xmlHttp.open( "GET", "http://52.214.158.151:3333/leagues", false ); // false for synchronous request
         xmlHttp.send( null );
 
         const obj = JSON.parse(xmlHttp.responseText);
